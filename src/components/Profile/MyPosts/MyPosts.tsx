@@ -7,12 +7,12 @@ import s from "./MyPosts.module.scss";
 
 interface MyPostsProps {
   posts: Post[];
-  addPost: (newPost: string) => void;
+  setNewPost: (newPost: string) => void;
 }
 
-const MyPosts: FC<MyPostsProps> = ({ posts, addPost }) => {
+const MyPosts: FC<MyPostsProps> = ({ posts, setNewPost }) => {
   const onSubmit = (values: { newPost: string }) => {
-    values.newPost.length && addPost(values.newPost);
+    values.newPost.length && setNewPost(values.newPost);
   };
 
   return (
